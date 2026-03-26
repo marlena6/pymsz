@@ -150,16 +150,13 @@ class TT_model(object):
             if label=='tSZ':
                 Tszdata = simd.Tszdata[idc]
             elif label=='ne':
-                Tszdata = simd.electron_number_density[idc] # hacky way to get options for electron numdens or temp
-            elif label=='Te':
-                Tszdata = simd.electron_temperature[idc]
+                Tszdata = simd.electron_number[idc] # hacky way to get options for electron numdens or temp
         else:
             if label=='tSZ':
                 Tszdata = np.copy(simd.Tszdata)
             elif label=='ne':
-                Tszdata = np.copy(simd.electron_number_density)
-            elif label=='Te':
-                Tszdata = np.copy(simd.electron_temperature)
+                Tszdata = np.copy(simd.electron_number)
+            
 
         if isinstance(simd.hsml, type(0)):
             # self.ngb = 64
